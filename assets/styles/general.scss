@@ -1,0 +1,219 @@
+@import "./src/assets/styles/utilities/variables";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700,800,900');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5em;
+
+  @media screen and (min-width: $screen-sm){
+    font-size: 16px;
+  }
+  @media screen and (min-width: $screen-md){
+    font-size: 18px;
+  }
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-sm){
+    font-size: 32px;
+  }
+  @media screen and (min-width: $screen-md){
+    font-size: 48px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+h2 {
+  font-weight: 300;
+}
+h3 {
+  font-size: 28px;
+}
+
+a {
+  color: $color-primary;
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
+  &:active {
+    color: darken($color-primary, 15%);
+  }
+}
+
+h3.highlight {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -12px;
+    left: 12px;
+    width: calc(100% + 30px);
+    height: 30px;
+    background: transparentize($color-highlight, 0.3);
+    z-index: -1;
+  }
+}
+textarea {
+  resize: vertical;
+  line-height: 1.5em;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid $color-shaded;
+
+  &:focus {
+    border-color: $neutral-dk;
+  }
+}
+input {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.btn-default {
+  width: unset;
+  padding: 10px 30px;
+  margin: 0 auto;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+  background: $neutral-lt;
+  color: $color-primary;
+  font-weight: 800;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background: lighten($color-highlight, 5%);
+    transition: all 0.2s;
+    outline: none;
+  }
+  &:active {
+    background: $color-highlight;
+  }
+}
+.btn-primary {
+  @extend .btn-default;
+
+}
+
+.button--action {
+  display: inline-block;
+  padding: 20px 30px;
+  border: 1px solid $color-highlight;
+  border-radius: 50px;
+  color: $color-highlight;
+  outline: none;
+  transition: all 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-highlight;
+    border: 1px solid $color-highlight;
+    color: $color-primary;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  &:active {
+    background: darken($color-highlight, 5%);
+  }
+
+  &.dark {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: #ffffff;
+    }
+  }
+  &.light {
+    background: #ffffff;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-highlight;
+    }
+    &:active {
+      background: darken($color-highlight, 5%);
+    }
+  }
+}
+
+
+.center-text {
+  text-align: center;
+}
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container-narrow {
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+.loading-section {
+  .loading-section__icon {
+    background: url("/assets/images/icons/loading-icon.svg") no-repeat center;
+    background-size: contain;
+    height: 80px;
+    margin: 60px 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparentize($neutral-lt, 0.1);
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $color-stroke;
+
+  &:active {
+    background: darken($color-stroke, 5%);
+  }
+  &:window-inactive {
+    background: lighten($color-stroke, 5%);
+  }
+}

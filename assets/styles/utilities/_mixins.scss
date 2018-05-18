@@ -1,0 +1,47 @@
+
+@mixin card-shadow() {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 3px 4px -2px rgba(0,0,0,0.25), 0 0 5px 0 rgba(0,0,0,0.18);
+}
+@mixin inset-shadow() {
+  box-shadow: inset 0 7px 10px -9px rgba(0,0,0,0.4), inset 0 -7px 10px -9px rgba(0,0,0,0.4);
+}
+@mixin box-shadow-lt() {
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1), 0 0 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+@mixin mat-icon-font() {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+@mixin vertical-center-container() {
+  position: relative;
+
+  &:before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+  }
+}
+
+@mixin vertical-center-content() {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  max-width: 95%;
+}
+
+%body-container {
+  overflow-y: auto;
+  max-width: 900px;
+  margin: 0 auto;
+}
